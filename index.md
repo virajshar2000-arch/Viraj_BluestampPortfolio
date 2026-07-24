@@ -1,4 +1,5 @@
-#**Self driving robot car**
+**Self driving robot car**
+
 The future is now, through a custom-built self-driving robot designed to navigate around areas without any human control. By combining realtime sensor processing with advanced movement algorithms, the robot successfully can drive comfortably through unpredictable environment. Through overcoming dead sensors, LED's not working, and code being a hassle, I overcame everything and successfully built this amaxing robot.
 
 | **Engineer** | **School** | **Area of Interest** | **Grade** |
