@@ -55,15 +55,197 @@ https://docs.sunfounder.com/projects/3in1-kit-v2/en/latest/_images/car_7_8.png
 # Code
 
 ```c++
-void setup() {
-  // put your setup code here, to run once:
-  Serial.begin(9600);
-  Serial.println("Hello World!");
+// -------------------- PIN SETUP --------------------
+const int A_1B = 5;   // Motor A backward
+const int A_1A = 6;   // Motor A forward
+const int B_1B = 9;   // Motor B forward
+const int B_1A = 10;  // Motor B backward
+const int echoPin = 4; 
+const int trigPin = 3; 
+
+const int leftIR  = A1;
+const int rightIR = A2;
+
+const int redPin = 11;   
+const int greenPin = 12; 
+const int bluePin = 13;  
+
+const int buz = 2;  
+int errorCounter = 0; 
+
+
+const int IR_THRESHOLD = 500;  
+
+
+// -------------------- ULTRASONIC --------------------
+float readSensorData() {
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin, LOW);
+
+  long duration = pulseIn(echoPin, HIGH, 30000); 
+  if (duration == 0) return -1;  
+
+  float distance = duration / 58.0;
+  return distance;
 }
 
-void loop() {
-  // put your main code here, to run repeatedly:
 
+// -------------------- MOTOR & LED CONTROL --------------------
+void moveForward(int speed) {
+  analogWrite(redPin, 255);      
+  digitalWrite(greenPin, LOW);  
+  analogWrite(A_1A, speed);
+  analogWrite(A_1B, 0);
+  analogWrite(B_1B, speed);
+  analogWrite(B_1A, 0);
+}
+
+void moveBackward(int speed) {
+  analogWrite(redPin, 255);      
+  digitalWrite(greenPin, LOW);   
+  analogWrite(A_1B, speed);
+  analogWrite(B_1B, 0);
+  analogWrite(B_1A, speed);
+}
+
+void backLeft(int speed) {
+  analogWrite(redPin, 255);     
+  digitalWrite(greenPin, LOW);   
+  analogWrite(A_1B, speed);
+  analogWrite(B_1B, 0);
+  analogWrite(B_1A, 0);
+}
+
+void backRight(int speed) {
+  analogWrite(redPin, 255);     
+  digitalWrite(greenPin, LOW);   
+  analogWrite(A_1A, 0);
+  analogWrite(A_1B, 0);
+  analogWrite(B_1B, 0);
+  analogWrite(B_1A, speed);
+}
+
+void stopMove() {
+  analogWrite(redPin, 0);        
+  digitalWrite(greenPin, HIGH);  
+  analogWrite(A_1A, 0);
+  analogWrite(A_1B, 0);
+  analogWrite(B_1B, 0);
+  analogWrite(B_1A, 0);
+
+  tone(buz, 1000, 400);  
+}
+
+
+// -------------------- SETUP --------------------
+void setup() {
+  Serial.begin(9600);
+
+  pinMode(A_1A, OUTPUT);
+  pinMode(A_1B, OUTPUT);
+  pinMode(B_1A, OUTPUT);
+  pinMode(B_1B, OUTPUT);
+
+  pinMode(echoPin, INPUT);
+  pinMode(trigPin, OUTPUT);
+
+  pinMode(leftIR, INPUT);
+  pinMode(rightIR, INPUT);
+
+  pinMode(redPin, OUTPUT);
+  pinMode(greenPin, OUTPUT);
+  pinMode(bluePin, OUTPUT);
+
+  pinMode(buz, OUTPUT);
+  
+  analogWrite(redPin, 255);   
+  digitalWrite(greenPin, HIGH);
+  digitalWrite(bluePin, HIGH);
+}
+
+
+// -------------------- MAIN LOOP --------------------
+void loop() {
+
+  int leftRaw  = analogRead(leftIR);
+  int rightRaw = analogRead(rightIR);
+
+  int leftVal  = abs(1023 - leftRaw);
+  int rightVal = abs(1023 - rightRaw);
+
+  bool leftCovered  = leftVal  > IR_THRESHOLD;
+  bool rightCovered = rightVal > IR_THRESHOLD;
+
+  float distance = readSensorData();
+  Serial.print("Distance: ");
+  Serial.println(distance);
+
+  Serial.print("IR left: ");
+  Serial.print(leftVal);
+  Serial.print(" | IR right: ");
+  Serial.println(rightVal);
+
+  delay(1000); 
+
+
+  // -------------------- IR OBSTACLE LOGIC (ANALOG) --------------------
+  if (leftCovered && !rightCovered) {
+    stopMove();
+    delay(300);
+    backRight(150);
+    delay(500);
+    return;
+  }
+
+  if (rightCovered && !leftCovered) {
+    stopMove();
+    delay(300);
+    backLeft(150);
+    delay(500);
+    return;
+  }
+
+  if (leftCovered && rightCovered) {
+    stopMove();
+    delay(300);
+    moveBackward(150);
+    delay(600);
+    return;
+  }
+
+
+  // -------------------- ULTRASONIC GLITCH FILTER --------------------
+  if (distance == -1) {
+    errorCounter++;
+    if (errorCounter > 10) { 
+      stopMove();
+    }
+    return; 
+  }
+  
+  errorCounter = 0; 
+
+
+  // -------------------- ULTRASONIC LOGIC --------------------
+  if (distance < 10) {
+    stopMove();
+    delay(400); 
+    moveBackward(150);
+    delay(600);
+    backLeft(150);
+    delay(400);
+    return;
+  }
+
+  if (distance < 25) {
+    moveForward(120);
+    return;
+  }
+
+  moveForward(200);
 }
 ```
 
