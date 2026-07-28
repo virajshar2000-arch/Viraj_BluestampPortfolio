@@ -63,12 +63,12 @@ const int B_1A = 10;  // Motor B backward
 const int echoPin = 4; 
 const int trigPin = 3; 
 
-const int leftIR  = A1;
-const int rightIR = A2;
+const int leftIR  = 7;
+const int rightIR = 8;
 
-const int redPin = 11;   
-const int greenPin = 12; 
-const int bluePin = 13;  
+const int red = 12;   
+const int green = 11; 
+const int blue = 13;  
 
 const int buz = 2;  
 int errorCounter = 0; 
@@ -85,7 +85,7 @@ float readSensorData() {
   delayMicroseconds(10);
   digitalWrite(trigPin, LOW);
 
-  long duration = pulseIn(echoPin, HIGH, 30000); 
+  long duration = pulseIn(echoPin, HIGH, 11500); 
   if (duration == 0) return -1;  
 
   float distance = duration / 58.0;
@@ -95,8 +95,8 @@ float readSensorData() {
 
 // -------------------- MOTOR & LED CONTROL --------------------
 void moveForward(int speed) {
-  analogWrite(redPin, 255);      
-  digitalWrite(greenPin, LOW);  
+  setColor(0, 128, 0);
+
   analogWrite(A_1A, speed);
   analogWrite(A_1B, 0);
   analogWrite(B_1B, speed);
@@ -104,24 +104,28 @@ void moveForward(int speed) {
 }
 
 void moveBackward(int speed) {
-  analogWrite(redPin, 255);      
-  digitalWrite(greenPin, LOW);   
+  setColor(255, 165, 0);
+
   analogWrite(A_1B, speed);
   analogWrite(B_1B, 0);
   analogWrite(B_1A, speed);
 }
 
-void backLeft(int speed) {
-  analogWrite(redPin, 255);     
-  digitalWrite(greenPin, LOW);   
+void setColor(int redValue, int greenValue,  int blueValue) {
+  analogWrite(red, redValue);
+  analogWrite(green,  greenValue);
+  analogWrite(blue, blueValue);
+}
+
+void backLeft(int speed) {  
+  setColor(255,255,0);
   analogWrite(A_1B, speed);
   analogWrite(B_1B, 0);
   analogWrite(B_1A, 0);
 }
 
-void backRight(int speed) {
-  analogWrite(redPin, 255);     
-  digitalWrite(greenPin, LOW);   
+void backRight(int speed) {  
+  setColor(255,255,0);
   analogWrite(A_1A, 0);
   analogWrite(A_1B, 0);
   analogWrite(B_1B, 0);
@@ -129,8 +133,7 @@ void backRight(int speed) {
 }
 
 void stopMove() {
-  analogWrite(redPin, 0);        
-  digitalWrite(greenPin, HIGH);  
+  setColor(255,0,0);
   analogWrite(A_1A, 0);
   analogWrite(A_1B, 0);
   analogWrite(B_1B, 0);
@@ -155,44 +158,42 @@ void setup() {
   pinMode(leftIR, INPUT);
   pinMode(rightIR, INPUT);
 
-  pinMode(redPin, OUTPUT);
-  pinMode(greenPin, OUTPUT);
-  pinMode(bluePin, OUTPUT);
+  pinMode(red, OUTPUT);
+  pinMode(green, OUTPUT);
+  pinMode(blue, OUTPUT);
 
   pinMode(buz, OUTPUT);
   
-  analogWrite(redPin, 255);   
-  digitalWrite(greenPin, HIGH);
-  digitalWrite(bluePin, HIGH);
 }
 
 
 // -------------------- MAIN LOOP --------------------
 void loop() {
-
-  int leftRaw  = analogRead(leftIR);
-  int rightRaw = analogRead(rightIR);
-
-  int leftVal  = abs(1023 - leftRaw);
-  int rightVal = abs(1023 - rightRaw);
-
-  bool leftCovered  = leftVal  > IR_THRESHOLD;
-  bool rightCovered = rightVal > IR_THRESHOLD;
+  int rightRaw  = digitalRead(leftIR);
+  int leftRaw = digitalRead(rightIR);
+  Serial.print("Right sensor: ");
+  Serial.print(rightRaw);
+  Serial.print(" Left sensor: ");
+  Serial.println(leftRaw);
+  delay(1000);
+  
+  bool leftCovered  = leftRaw;
+  bool rightCovered = rightRaw;
 
   float distance = readSensorData();
   Serial.print("Distance: ");
   Serial.println(distance);
 
   Serial.print("IR left: ");
-  Serial.print(leftVal);
+  Serial.print(leftRaw);
   Serial.print(" | IR right: ");
-  Serial.println(rightVal);
+  Serial.println(rightRaw);
 
   delay(1000); 
 
 
   // -------------------- IR OBSTACLE LOGIC (ANALOG) --------------------
-  if (leftCovered && !rightCovered) {
+  if (leftRaw == 0 && rightRaw == 1) {
     stopMove();
     delay(300);
     backRight(150);
@@ -200,7 +201,7 @@ void loop() {
     return;
   }
 
-  if (rightCovered && !leftCovered) {
+  if (rightRaw == 0 && leftRaw== 1) {
     stopMove();
     delay(300);
     backLeft(150);
@@ -208,7 +209,7 @@ void loop() {
     return;
   }
 
-  if (leftCovered && rightCovered) {
+  if (leftRaw ==0 && rightRaw==0) {
     stopMove();
     delay(300);
     moveBackward(150);
@@ -246,6 +247,7 @@ void loop() {
   }
 
   moveForward(200);
+  
 }
 ```
 
