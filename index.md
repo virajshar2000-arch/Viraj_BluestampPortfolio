@@ -249,7 +249,7 @@ void loop() {
 | Piezo Buzzer | Makes a noise whenever an objects is close | $0.86 | <a href="[https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/](https://www.amazon.com/BNYZWOT-Active-Industrial-Electric-Alarmer/dp/B07VQ94DM1/ref=sr_1_2_sspa?dib=eyJ2IjoiMSJ9.Kc1lRhz-FXgslMSBkHup9x5It0lsf8CxJn4BUQ5uZ9n-t4mFJOVZDpCEzFl9wohTJK10Ox6O7S3OUt20dj4pkP18xRE-fZarGVYiXyaFEaTt2UDPgoWqIKiMJeU5HN7MyDfwY2lC2do6U4EtLrgCbkHVDCMYM3S6NhGKjV1KycMQaS_XSBrEuZLG5Vl23MVlyUNggmwGhXByU4M_sQiyemKS5zOEL-xJOUriDfXl0pE.R7YBsZc5Mab9y_GiBK9x-Wsxc7_lIy0fOS85810gNqU&dib_tag=se&keywords=piezo+electric+buzzer&qid=1785531762&sr=8-2-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1)"> Link </a> |
 
 # Other Resources/Examples
-One of the best parts about Github is that you can view how other people set up their own work. Here are some past BSE portfolios that are awesome examples. You can view how they set up their portfolio, and you can view their index.md files to understand how they implemented different portfolio components.
+
 -(https://docs.sunfounder.com/projects/3in1-kit-v2/en/latest/car_project/car_auto.html)
 -[Example 2](https://sviatil0.github.io/Sviatoslav_BSE/)](https://arduinogetstarted.com/tutorials/arduino-piezo-buzzer#google_vignette)
 
