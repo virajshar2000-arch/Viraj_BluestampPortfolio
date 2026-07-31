@@ -239,8 +239,7 @@ void loop() {
 ```
 
 # Bill of Materials
-Here's where you'll list the parts in your project. To add more rows, just copy and paste the example rows below.
-Don't forget to place the link of where to buy each component inside the quotation marks in the corresponding row after href =. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize this to your project needs. 
+
 
 | **Part** | **Note** | **Price** | **Link** |
 |:--:|:--:|:--:|:--:|
@@ -248,5 +247,10 @@ Don't forget to place the link of where to buy each component inside the quotati
 | IR sensor | Is the Left and Right Sensor | $0.88 | <a href="[https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/](https://www.amazon.com/HiLetgo-Infrared-Avoidance-Reflective-Photoelectric/dp/B07W97H2WS?source=ps-sl-shoppingads-lpcontext&ref_=bing_fplfs&psc=1)"> Link </a> |
 | RGB LED | Displays a color when depending on the circumstance | $0.09 | <a href="[https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6](https://www.amazon.com/EDGELEC-Tri-Color-Multicolor-Diffused-Resistors/dp/B077XGF3YR/ref=sr_1_3?dib=eyJ2IjoiMSJ9.n_1s7MzfZdIbo7QygYEijLroEyzOGUDTV4dSIMcYhE-7RQCAzC-GoCZXaM_xD-zO3IgbCXK4MNw-n28NVB-9_iAdnBgRPGx11-VxR0sr-14HPFmCIxrdMBs7nsy7czPylLFk9wJUpP8rW19kJo6qgeNYK9-IrAEftkTONsYMKbJZNDQbdcxkQpM5E58ojftabYliQJ-TfgFzZcfSxYTzP_A3s6ooSxL9QfiVliMQWK0.w2bUcAIFP-C-xcrnZuQaaTfJ221lL1DNtWrqo2Ld5ZY&dib_tag=se&keywords=rgb%2Bled&qid=1785531848&sr=8-3&th=1)"> Link </a> |
 | Piezo Buzzer | Makes a noise whenever an objects is close | $0.86 | <a href="[https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/](https://www.amazon.com/BNYZWOT-Active-Industrial-Electric-Alarmer/dp/B07VQ94DM1/ref=sr_1_2_sspa?dib=eyJ2IjoiMSJ9.Kc1lRhz-FXgslMSBkHup9x5It0lsf8CxJn4BUQ5uZ9n-t4mFJOVZDpCEzFl9wohTJK10Ox6O7S3OUt20dj4pkP18xRE-fZarGVYiXyaFEaTt2UDPgoWqIKiMJeU5HN7MyDfwY2lC2do6U4EtLrgCbkHVDCMYM3S6NhGKjV1KycMQaS_XSBrEuZLG5Vl23MVlyUNggmwGhXByU4M_sQiyemKS5zOEL-xJOUriDfXl0pE.R7YBsZc5Mab9y_GiBK9x-Wsxc7_lIy0fOS85810gNqU&dib_tag=se&keywords=piezo+electric+buzzer&qid=1785531762&sr=8-2-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1)"> Link </a> |
+
+# Other Resources/Examples
+One of the best parts about Github is that you can view how other people set up their own work. Here are some past BSE portfolios that are awesome examples. You can view how they set up their portfolio, and you can view their index.md files to understand how they implemented different portfolio components.
+-(https://docs.sunfounder.com/projects/3in1-kit-v2/en/latest/car_project/car_auto.html)
+-[Example 2](https://sviatil0.github.io/Sviatoslav_BSE/)](https://arduinogetstarted.com/tutorials/arduino-piezo-buzzer#google_vignette)
 
 
