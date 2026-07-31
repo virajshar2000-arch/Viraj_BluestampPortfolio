@@ -16,13 +16,7 @@ The future is now, through a custom-built self-driving robot designed to navigat
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/jRP8sBza8Ko?si=wWM_eP-PgpRf6bJ1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-For your final milestone, explain the outcome of your project. Key details to include are:
-- Assembled all the modifications (LED, Piezo Buzzer)
-- IR Distance Sensors never worked because of coding issues, I debugged with my instructors and found the problem 
-- Learned how to solder, debug/problem solve, and code in Arduino
-- What you hope to learn in the future after everything you've learned at BSE I hope to figure out how to 
-
-
+Through my final milestone at Bluestamp, I successfully assembled all hardware modifications, including integrating LEDs and a piezo buzzer into my project. While the IR distance sensors initially failed to function due to coding issues, I proactively collaborated with my instructors to debug the system and resolve the underlying problems. This hands-on process allowed me to master essential technical skills, such as soldering, complex debugging, and Arduino programming. I also learned how to systematically isolate variables when hardware and software conflict, which significantly boosted my engineering confidence. Moving forward, I hope to build upon this foundation by exploring advanced embedded systems and applying these skills to more autonomous, intricate robotics projects that challenge my new problem-solving abilities.
 
 # Second Milestone
 
@@ -30,24 +24,15 @@ For your final milestone, explain the outcome of your project. Key details to in
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/xWPwQFeYW9k?si=khreZ7yKGH77LwWj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-For your second milestone, explain what you've worked on since your previous milestone. You can highlight:
-- Technical details of what you've accomplished and how they contribute to the final goal
-- What has been surprising about the project so far
-- Previous challenges you faced that you overcame
-- What needs to be completed before your final milestone 
+For my 2nd milestone, I successfully wired the H-bridge grounds to the motor wires, establishing the critical electrical connections needed to make my robot move toward its final goal. Along the way, I have been continually surprised by the precision and efficiency of the ultrasonic sensors in accurately measuring distance. This milestone is especially rewarding because I previously faced a major hurdle where my code failed to match the robot’s physical actions; however, I overcame this by working closely with my instructors to systematically debug the program. Before reaching my final milestone, I just need to integrate the final hardware modifications, which include adding the indicator LEDs and the piezo buzzer.
 
 # First Milestone
 
 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/s2_vywoENfQ?si=ETExBdIPh4D-tiVw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-For your first milestone, describe what your project is and how you plan to build it. You can include:
-- An explanation about the different components of your project and how they will all integrate together
-- Technical progress you've made so far
-- Challenges you're facing and solving in your future milestones
-- What your plan is to complete your project
 
-
+For my first milestone, I successfully completed the physical assembly of my autonomous robot, establishing a clear tri-layer integration system. On the bottom layer, the DC motors and battery pack provide mobility and power; on the top layer, sensors actively measure distance to scan the environment; and in the middle, the Arduino microcontroller serves as the central brain routing signals between all components. During assembly, my primary challenge was making mechanical errors and fastening parts incorrectly, which required significant time to disassemble and fix. I overcame this bottleneck by slowing down, focusing on precision, and carefully reviewing my schematics before mounting hardware. Moving forward, my plan to complete the project involves finalizing the core navigation code, resolving any software bugs, and then integrating my final hardware modifications, such as the LEDs and piezo buzzer.
 
 # Schematics 
 https://docs.sunfounder.com/projects/3in1-kit-v2/en/latest/_images/car_7_8.png
@@ -257,7 +242,7 @@ Don't forget to place the link of where to buy each component inside the quotati
 
 | **Part** | **Note** | **Price** | **Link** |
 |:--:|:--:|:--:|:--:|
-| Item Name | What the item is used for | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
+| 3 in 1  | What the item is used for | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
 | Item Name | What the item is used for | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
 | Item Name | What the item is used for | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
 
