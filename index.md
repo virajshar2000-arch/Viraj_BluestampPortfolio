@@ -35,8 +35,7 @@ For my 2nd milestone, I successfully wired the H-bridge grounds to the motor wir
 For my first milestone, I successfully completed the physical assembly of my autonomous robot, establishing a clear tri-layer integration system. On the bottom layer, the DC motors and battery pack provide mobility and power; on the top layer, sensors actively measure distance to scan the environment; and in the middle, the Arduino microcontroller serves as the central brain routing signals between all components. During assembly, my primary challenge was making mechanical errors and fastening parts incorrectly, which required significant time to disassemble and fix. I overcame this bottleneck by slowing down, focusing on precision, and carefully reviewing my schematics before mounting hardware. Moving forward, my plan to complete the project involves finalizing the core navigation code, resolving any software bugs, and then integrating my final hardware modifications, such as the LEDs and piezo buzzer.
 
 # Schematics 
-https://docs.sunfounder.com/projects/3in1-kit-v2/en/latest/_images/car_7_8.png
-<135010.png>
+![Alt Text](<Schematic>)
 
 
 
