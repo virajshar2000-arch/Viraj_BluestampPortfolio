@@ -6,7 +6,7 @@ The future is now, through a custom-built self-driving robot designed to navigat
 |:--:|:--:|:--:|:--:|
 | Viraj S. | Kennedy Middle School| Mechanical Engineering | Incoming 8th Grader
 
-**Replace the BlueStamp logo below with an image of yourself and your completed project. Follow the guide [here](https://tomcam.github.io/least-github-pages/adding-images-github-pages-site.html) if you need help.**
+
 
 ![Headstone Image](logo.svg)
   
@@ -14,13 +14,13 @@ The future is now, through a custom-built self-driving robot designed to navigat
 
 
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/xWPwQFeYW9k?si=khreZ7yKGH77LwWj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/jRP8sBza8Ko?si=wWM_eP-PgpRf6bJ1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 For your final milestone, explain the outcome of your project. Key details to include are:
-- What you've accomplished since your previous milestone
-- What your biggest challenges and triumphs were at BSE
-- A summary of key topics you learned about
-- What you hope to learn in the future after everything you've learned at BSE
+- Assembled all the modifications (LED, Piezo Buzzer)
+- IR Distance Sensors never worked because of coding issues, I debugged with my instructors and found the problem 
+- Learned how to solder, debug/problem solve, and code in Arduino
+- What you hope to learn in the future after everything you've learned at BSE I hope to figure out how to 
 
 
 
