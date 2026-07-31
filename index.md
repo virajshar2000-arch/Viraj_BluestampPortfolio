@@ -8,7 +8,7 @@ The future is now, through a custom-built self-driving robot designed to navigat
 
 
 
-![Headstone Image](logo.svg)
+![Headstone Image](<1000069516.jpg>)
   
 # Final Milestone
 
