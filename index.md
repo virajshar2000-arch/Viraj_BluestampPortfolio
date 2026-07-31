@@ -36,6 +36,9 @@ For my first milestone, I successfully completed the physical assembly of my aut
 
 # Schematics 
 https://docs.sunfounder.com/projects/3in1-kit-v2/en/latest/_images/car_7_8.png
+<135010.png>
+
+
 
 # Code
 
